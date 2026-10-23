@@ -1,0 +1,55 @@
+// Replace with your own email address before publishing. It is used by FormSubmit.co.
+// Note: FormSubmit requires a one-time verification sent to this address.
+const CONTACT_EMAIL = 'touwtaal@gmail.com';
+const copy = {
+  en: {},
+  nl: {
+    navApproach:'Aanpak',navLessons:'Lessen',navAbout:'Over mij',navReviews:'Reviews',navContact:'Neem contact op ↗',
+    eyebrow:'GECERTIFICEERD NT2-DOCENT · ONLINE LESSEN NEDERLANDS',heroTitle:'Nederlands spreken begint met <em>zelfvertrouwen.</em>',heroBody:'Persoonlijke, praktische lessen Nederlands die bij jouw leven passen. Leer in je eigen tempo, spreek met meer vertrouwen en voel je thuis in Nederland.',heroCta:'Vraag een gratis kennismaking aan ↗',heroSecondary:'Bekijk de lessen ↗',heroTrust:'Sinds 2021 docent Nederlands voor anderstaligen<br><b>Online · Persoonlijk · Praktisch</b>',
+    proof1:'Bevoegd NT2-docent',proof2:'Privé- en duolessen',proof3:'Online en op maat',proof4:'Gratis kennismaking',
+    approachKicker:'NEDERLANDS LEREN OP JOUW MANIER',approachTitle:'Minder druk van het lesboek.<br><em>Meer echte gesprekken.</em>',approachIntro:'Of je nu begint met Nederlands of natuurlijker wilt leren spreken: we richten ons op taal die je buiten de les direct kunt gebruiken.',
+    value1Title:'Op jouw maat',value1Body:'Jouw doelen, jouw tempo en jouw lessen. Geen standaardprogramma.',value2Title:'Nederlands voor elke dag',value2Body:'Van een praatje met de buren tot gesprekken op het werk: praktische taal voor het echte leven.',value3Title:'Ruimte om te groeien',value3Body:'Een veilige en motiverende omgeving waarin fouten maken bij leren hoort.',
+    lessonsKicker:'ZO KUNNEN WE SAMEN LEREN',lessonsTitle:'Een lesvorm die<br><em>bij je past.</em>',lessonsIntro:'Twee manieren om te leren, met dezelfde persoonlijke aandacht.',privatePill:'HELEMAAL VOOR JOU',privateTitle:'Privélessen',privateBody:'Persoonlijke online lessen die aansluiten bij jouw niveau, tempo en doelen. Alle ruimte voor vragen, feedback en zelfverzekerd spreken.',privateBullet1:'Volledig afgestemd op jouw doelen',privateBullet2:'Flexibel online leren',privateBullet3:'Volledige persoonlijke aandacht',privateCta:'Informeer naar privélessen ↗',
+    duoPill:'DE TOUWTAAL DUO DEAL',duoTitle:'Samen leer je meer.',duoBody:'Leer Nederlands met je partner, vriend(in) of collega. Oefen samen, motiveer elkaar en maak van elke les een interactieve ervaring.',duoMathPrivate:'privécursist',duoMathDuo:'duocursisten',duoPriceTop:'SPECIAAL VOOR TWEE',duoPriceMain:'Twee cursisten. Eén gezamenlijk uurtarief.',duoPriceBottom:'Deel de kosten: 50% per persoon ten opzichte van een privéles alleen.',duoCta:'Vraag naar de Duo Deal ↗',
+    aboutKicker:'HALLO, IK BEN YASMINA',aboutTitle:'Een taaldocent die<br><em>in jou gelooft.</em>',about1:'Ik ben Yasmina, gecertificeerd NT2-docent en zelfstandig taaldocent. Sinds 2021 help ik internationals om Nederlands te gebruiken in het dagelijks leven — met gestructureerde, interactieve en plezierige lessen.',about2:'Mijn achtergrond combineert filosofie, een onderwijsbevoegdheid en een master in communicatie. Mijn leservaring omvat Preply, Koentact, Dutch in Dordrecht en Dutch Courses Rotterdam.',about3:'Volgens mij ontstaat zelfvertrouwen door de taal te gebruiken, niet door te wachten tot iedere zin perfect is. Die aanpak neem ik mee in iedere les.',portraitCaption:'DE DOCENT ACHTER TOUWTAAL',experienceHeading:'PROFESSIONELE ACHTERGROND',experienceDetail:'Gecertificeerd NT2-docent · Sinds 2021 docent voor internationals',
+    reviewsKicker:'ERVARINGEN VAN CURSISTEN',reviewsTitle:'Geloof niet alleen<br><em>mijn woorden.</em>',reviewSource:'Echte cursistenreviews van Preply · Geselecteerde fragmenten, eerder gedeeld op de TouwTaal-website.',
+    expectKicker:'JOUW LEERERVARING',expectTitle:'Nederlandse les die<br><em>bij jou past.</em>',expectIntro:'Persoonlijk, praktisch en afgestemd op jouw doelen.',expect1Title:'Afgestemd op jouw doelen',expect1Body:'Lessen die aansluiten bij je niveau, interesses en leerbehoeften.',expect2Title:'Spreken met vertrouwen',expect2Body:'Veel ruimte om echte gesprekken te oefenen.',expect3Title:'Gerichte feedback',expect3Body:'Duidelijke uitleg en opbouwende feedback om verder te komen.',expect4Title:'Flexibel online leren',expect4Body:'Leer waar je wilt, op momenten die we samen afspreken.',
+    faqKicker:'GOED OM TE WETEN',faqTitle:'Veelgestelde<br><em>vragen.</em>',faqIntro:'Alvast antwoord op een paar praktische vragen.',faq1Q:'Moet ik al Nederlands kunnen spreken?',faq1A:'Helemaal niet! Of je nu net begint of al Nederlands spreekt: we stemmen de lessen af op jouw niveau en doelen.',faq2Q:'Kan ik duolessen volgen met iemand op een ander niveau?',faq2A:'Misschien! Duolessen werken het best als jullie niveaus en doelen redelijk goed bij elkaar passen. Tijdens de kennismaking kunnen we dit bespreken.',faq3Q:'Hoe werkt de gratis kennismaking van 30 minuten?',faq3A:'Stuur een aanvraag via het contactformulier. Ik reageer persoonlijk zodat we samen een geschikt tijdstip kunnen afspreken. Je zit nergens aan vast.',faq4Q:'Hoe werkt de Duo Deal?',faq4A:'Je volgt samen met je partner, vriend(in) of collega een online les voor hetzelfde totale uurtarief als één privéles. Jullie kunnen de kosten dus delen.',faq5Q:'Zijn de lessen online?',faq5A:'Ja. TouwTaal biedt op dit moment online privé- en duolessen aan. Je kunt dus leren waar je wilt.',
+    contactKicker:'LATEN WE KENNISMAKEN',contactTitle:'Jouw Nederlands begint<br><em>met een gesprek.</em>',contactDesc:'Benieuwd of we een goede match zijn? Vraag een gratis kennismaking van 30 minuten aan. Vertel iets over jezelf, dan neem ik contact op om samen een geschikt moment af te spreken.',contactPoint1:'Gratis kennismaking van 30 minuten',contactPoint2:'Geen verplichting om lessen te boeken',contactPoint3:'We spreken samen een tijd af — geen automatische agenda',formTitle:'Leuk om kennis te maken',formSub:'Vertel me alvast iets over jezelf.',nameLabel:'Naam *',emailLabel:'E-mailadres *',interestLabel:'Ik heb interesse in *',interestIntro:'Gratis kennismakingsgesprek van 30 minuten',interestPrivate:'Privélessen',interestDuo:'De Duo Deal',interestUnsure:'Ik weet nog niet welke lesvorm past',interestCollab:'Samenwerking / algemene vraag',levelLabel:'Mijn huidige taalniveau',levelNotSure:'Dat weet ik nog niet',messageLabel:'Wat wil je nog vertellen?',messagePlaceholder:'Vertel iets over je doelen, beschikbaarheid of met wie je samen wilt leren...',privacyConsent:'Ik geef toestemming om mijn gegevens te gebruiken om mijn vraag te beantwoorden.',sendButton:'Verstuur mijn aanvraag ↗',formNote:'Vrijblijvend. We stemmen een geschikt tijdstip af via e-mail.',footerTag:'Leer Nederlands. Spreek met zelfvertrouwen.',footerEmail:'Mail mij ↗'
+  }
+};
+let language = 'en';
+const original = {};
+for (const node of document.querySelectorAll('[data-i18n]')) original[node.dataset.i18n] = node.textContent;
+for (const node of document.querySelectorAll('[data-i18n-html]')) original[node.dataset.i18nHtml] = node.innerHTML;
+for (const node of document.querySelectorAll('[data-i18n-placeholder]')) original[node.dataset.i18nPlaceholder] = node.placeholder;
+function translate(lang) {
+  language=lang;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(n=>n.textContent=(copy[lang][n.dataset.i18n]??original[n.dataset.i18n]));
+  document.querySelectorAll('[data-i18n-html]').forEach(n=>n.innerHTML=(copy[lang][n.dataset.i18nHtml]??original[n.dataset.i18nHtml]));
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(n=>n.placeholder=(copy[lang][n.dataset.i18nPlaceholder]??original[n.dataset.i18nPlaceholder]));
+  document.getElementById('langBtn').innerHTML=(lang==='en'?'NL':'EN')+' <span>↗</span>';
+  document.getElementById('formStatus').textContent=copy[lang].formNote??original.formNote;
+}
+document.getElementById('langBtn').addEventListener('click',()=>translate(language==='en'?'nl':'en'));
+document.getElementById('year').textContent=new Date().getFullYear();
+if(CONTACT_EMAIL.includes('@')) {let a=document.getElementById('emailLink');a.href='mailto:'+CONTACT_EMAIL;a.style.display='';}
+document.querySelectorAll('[data-type]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('interest').value=a.dataset.type;}));
+document.getElementById('contactForm').addEventListener('submit',async(e)=>{
+  e.preventDefault();
+  const form=e.currentTarget,status=document.getElementById('formStatus'),submit=form.querySelector('button[type="submit"]');
+  if(!CONTACT_EMAIL.includes('@')) {status.textContent= language==='en'?'The contact form has not been configured yet. Please add your contact email in script.js.':'Het contactformulier is nog niet ingesteld. Voeg je e-mailadres toe in script.js.';return;}
+  const data=new FormData(form);
+  data.append('_subject','TouwTaal — New website enquiry');data.append('_captcha','true');data.append('_template','table');
+  submit.disabled=true;
+  status.textContent=language==='en'?'Sending...':'Verzenden...';
+  try{
+    const response=await fetch('https://formsubmit.co/ajax/'+encodeURIComponent(CONTACT_EMAIL),{method:'POST',headers:{'Accept':'application/json'},body:data});
+    const result=await response.json();
+    if(!response.ok || (result.success!==true && result.success!=='true'))throw new Error('Submission rejected');
+    status.textContent=language==='en'?'Thank you! Your message has been submitted. I’ll be in touch by email.':'Bedankt! Je bericht is verstuurd. Ik neem contact met je op via e-mail.';
+    form.reset();
+  }catch(error){status.textContent=language==='en'?'Something went wrong. Please try again later.':'Er ging iets mis. Probeer het later opnieuw.';}
+  finally{submit.disabled=false;}
+});
