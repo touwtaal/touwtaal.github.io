@@ -36,20 +36,6 @@ document.getElementById('langBtn').addEventListener('click',()=>translate(langua
 document.getElementById('year').textContent=new Date().getFullYear();
 if(CONTACT_EMAIL.includes('@')) {let a=document.getElementById('emailLink');a.href='mailto:'+CONTACT_EMAIL;a.style.display='';}
 document.querySelectorAll('[data-type]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('interest').value=a.dataset.type;}));
-document.getElementById('contactForm').addEventListener('submit',async(e)=>{
-  e.preventDefault();
-  const form=e.currentTarget,status=document.getElementById('formStatus'),submit=form.querySelector('button[type="submit"]');
-  if(!CONTACT_EMAIL.includes('@')) {status.textContent= language==='en'?'The contact form has not been configured yet. Please add your contact email in script.js.':'Het contactformulier is nog niet ingesteld. Voeg je e-mailadres toe in script.js.';return;}
-  const data=new FormData(form);
-  data.append('_subject','TouwTaal — New website enquiry');data.append('_captcha','true');data.append('_template','table');
-  submit.disabled=true;
-  status.textContent=language==='en'?'Sending...':'Verzenden...';
-  try{
-    const response=await fetch('https://formsubmit.co/ajax/'+encodeURIComponent(CONTACT_EMAIL),{method:'POST',headers:{'Accept':'application/json'},body:data});
-    const result=await response.json();
-    if(!response.ok || (result.success!==true && result.success!=='true'))throw new Error('Submission rejected');
-    status.textContent=language==='en'?'Thank you! Your message has been submitted. I’ll be in touch by email.':'Bedankt! Je bericht is verstuurd. Ik neem contact met je op via e-mail.';
-    form.reset();
-  }catch(error){status.textContent=language==='en'?'Something went wrong. Please try again later.':'Er ging iets mis. Probeer het later opnieuw.';}
-  finally{submit.disabled=false;}
-});
+// The enquiry form submits directly to FormSubmit. This avoids a browser-side
+// AJAX request hanging indefinitely and shows the service's activation page.
+// The address must be activated by clicking the verification email in Gmail.
