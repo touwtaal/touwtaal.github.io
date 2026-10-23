@@ -39,3 +39,50 @@ document.querySelectorAll('[data-type]').forEach(a=>a.addEventListener('click',(
 // The enquiry form submits directly to FormSubmit. This avoids a browser-side
 // AJAX request hanging indefinitely and shows the service's activation page.
 // The address must be activated by clicking the verification email in Gmail.
+
+
+// Submit through the already-activated FormSubmit.co endpoint.
+// Redirect ONLY after a successful JSON acknowledgement. No blind timeout redirect.
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  const statusNode = document.getElementById('formStatus');
+  const button = contactForm.querySelector('button[type="submit"]');
+  contactForm.addEventListener('submit', async function(event) {
+    event.preventDefault();
+    if (!contactForm.reportValidity()) return;
+    button.disabled = true;
+    const originalText = button.textContent;
+    button.textContent = language === 'nl' ? 'Verzenden…' : 'Sending…';
+    statusNode.textContent = language === 'nl' ? 'Je aanvraag wordt veilig verzonden…' : 'Your enquiry is being sent securely…';
+    const controller = new AbortController();
+    // Message after eight seconds: honest wait feedback, not a false success.
+    const slowNotice = setTimeout(() => {
+      statusNode.textContent = language === 'nl'
+        ? 'De verzenddienst reageert langzaam. Sluit deze pagina nog niet.'
+        : 'The form service is responding slowly. Please keep this page open.';
+    }, 8000);
+    const timeout = setTimeout(() => controller.abort(), 25000);
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/touwtaal@gmail.com', {
+        method: 'POST',
+        headers: {'Accept': 'application/json'},
+        body: new FormData(contactForm),
+        signal: controller.signal
+      });
+      const result = await response.json();
+      if (!response.ok || !(result.success === 'true' || result.success === true)) {
+        throw new Error(result.message || 'The service did not confirm delivery.');
+      }
+      window.location.assign('https://touwtaal.github.io/thank-you.html');
+    } catch (err) {
+      statusNode.textContent = language === 'nl'
+        ? 'We konden de verzending niet bevestigen. Controleer je internetverbinding en probeer het later opnieuw, of mail rechtstreeks naar touwtaal@gmail.com. Bij een time-out kan het bericht toch zijn aangekomen.'
+        : 'We could not confirm delivery. Please check your connection and try again later, or email touwtaal@gmail.com. If the request timed out, it may still have arrived.';
+      button.disabled = false;
+      button.textContent = originalText;
+    } finally {
+      clearTimeout(slowNotice);
+      clearTimeout(timeout);
+    }
+  });
+}
